@@ -11,6 +11,23 @@ class Address extends \Faker\Provider\Address
     ];
     protected static $buildingNumber = ['%####', '%###', '%##', '%#', '%'];
     protected static $postcode = ['#####-###'];
+    protected static $district = [
+        'Alvorada', 'Araxá', 'Beirol', 'Boné Azul', 'Brasil Novo', 'Buritizal', 'Cabralzinho',
+        'Central', 'Cidade Nova', 'Congós', 'Infraero', 'Jardim Equatorial', 'Jardim Felicidade',
+        'Jesus de Nazaré', 'Laguinho', 'Marco Zero', 'Nova Esperança', 'Novo Buritizal', 'Novo Horizonte',
+        'Pacoval', 'Pedrinhas', 'Perpétuo Socorro', 'Santa Inês', 'Santa Rita', 'São Lázaro', 'Trem',
+        'Universidade', 'Zerão', 'Aeroporto', 'Caruara', 'Maracajá', 'Pratinha', 'Água Boa',
+        'Castanheira', 'Maracangalha', 'Reduto', 'Águas Lindas', 'Chapéu-Virado', 'Marahú',
+        'Sacramenta', 'Águas Negras', 'Cidade Velha', 'Marambaia', 'São Brás', 'Agulha', 'Condor',
+        'Marco', 'São Clemente', 'Ariramba', 'Coqueiro', 'Miramar', 'São Francisco', 'Aurá', 'Cremação',
+        'Montese (Terra Firme)', 'São João de Outeiro', 'Baia do Sol', 'Cruzeiro', 'Murubira',
+        'Souza', 'Barreiro', 'Curió-UtingaNatal do Murubira', 'Sucurijuquara', 'Batista Campos',
+        'Farol', 'Nazaré', 'Tapanã', 'Benguí', 'Fátima (Matinha)', 'Paracuri', 'Telégrafo', 'Bonfim',
+        'Guamá', 'Paraíso', 'Tenoné', 'Brasília', 'Guanabara', 'Parque Guajará', 'Umarizal',
+        'Cabanagem', 'Itaiteua', 'Parque Verde', 'Una', 'Campina (Comércio)', 'Jurunas', 'Pedreira',
+        'Universitário', 'Campina de Icoaraci', 'Mangueirão', 'Ponta Grossa', 'Val-de-Cães', 'Canudos',
+        'Mangueiras', 'Porto Arthur', 'Vila', 'Carananduba', 'Maracacuera', 'Praia Grande'
+    ];
     protected static $state = [
         'Acre', 'Alagoas', 'Amapá', 'Amazonas', 'Bahia', 'Ceará',
         'Distrito Federal', 'Espírito Santo', 'Goiás', 'Maranhão',
@@ -118,6 +135,14 @@ class Address extends \Faker\Provider\Address
     public static function secondaryAddress()
     {
         return static::numerify(static::randomElement(static::$secondaryAddressFormats));
+    }
+
+    /**
+     * @example 'Central'
+     */
+    public static function district()
+    {
+        return static::randomElement(static::$district);
     }
 
     /**
